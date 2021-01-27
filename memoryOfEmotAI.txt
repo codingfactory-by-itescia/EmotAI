@@ -1,0 +1,2 @@
+myName=Emilia
+myBirthDate=27/01/2021
