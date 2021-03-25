@@ -3,15 +3,15 @@ class EmotAI:
     VALUE_OF_MEMORY_INDEX = 1
     def __init__(self):
 
-        self.myMemory=self.takeMemory()
+        self.myMemory=self.take_memory()
 
-    def takeMemory(self):
+    def take_memory(self):
         f = open("memoryOfEmotAI.txt", "r")
-        myDict = {}
+        my_dict = {}
         for memoryLine in f:
-            splittedMemories = memoryLine.split('=')
-            myDict[splittedMemories[self.NAME_OF_MEMORY_INDEX]] = splittedMemories[self.VALUE_OF_MEMORY_INDEX]
-        return myDict
+            splitted_memories = memoryLine.split('=')
+            my_dict[splitted_memories[self.NAME_OF_MEMORY_INDEX]] = splitted_memories[self.VALUE_OF_MEMORY_INDEX]
+        return my_dict
     def say(self, sentence):
         print(sentence)
 
@@ -20,13 +20,20 @@ class EmotAI:
 
     #return True to continue
     #return False to stop
-    def hearUser(self):
-        toAnalyze = input("Please send me a word : ")
-        if str.lower(toAnalyze) == "stop":
+    def hear_user(self):
+        to_analyze = input("Please send me a word : ")
+        if str.lower(to_analyze) == "stop":
             self.say("Ok, bye !")
             return False
+        elif str.lower(to_analyze) == "hit":
+            self.hit()
         else:
-            self.say("You said \""+toAnalyze+"\" but I did not understand. If you want to stop, just tell me STOP")
+            self.say("You said \""+to_analyze+"\" but I did not understand. If you want to stop, just tell me STOP")
             return True
-    def howDoYouFeel(self):
+
+    def how_do_you_feel(self):
         self.say("For the moment...")
+
+    def hit(self):
+        if self.personality["sensible"]:
+            self.say("AÎE !")
