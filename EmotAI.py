@@ -39,4 +39,7 @@ class EmotAI:
 
     def hit(self):
         if self.personality["sensible"]:
-            self.say("AÎE !")
+            self.say("AÎE ! I want to kill you ! I want to kill you all around the world !")
+        else:
+            self.say('?')
+
