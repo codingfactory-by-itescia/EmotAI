@@ -2,7 +2,7 @@
     "sensible": true,
     "extrovert": true,
     "impulsive": true,
-    "pessimistic": true,
+    "pessimistic": false,
     "demonstrative": true,
     "memory": []
 }
