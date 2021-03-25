@@ -8,5 +8,5 @@ loadedPersonality['sensible'] = True
 
 PersonalityParser.save("personality1", loadedPersonality)
 
-# c = AIConversation()
+c = AIConversation()
 
