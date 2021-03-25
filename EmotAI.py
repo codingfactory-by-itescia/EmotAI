@@ -38,8 +38,12 @@ class EmotAI:
         self.say("For the moment...")
 
     def hit(self):
-        if self.personality["sensible"]:
-            self.say("AÎE ! I want to kill you ! I want to kill you all around the world !")
-        else:
-            self.say('?')
+        if self.personality["extrovert"] and self.personality["impulsive"] and not self.personality["pessimistic"] and self.personality["demonstrative"]:
+            pass
+        if not self.personality["extrovert"] and not self.personality["pessimistic"] and not self.personality["impulsive"]:
+            pass
+        if self.personality["sensible"] and self.personality["impulsive"] and self.personality["pessimistic"] and self.personality["demonstrative"]:
+            pass
+        if self.personality["sensible"] and self.personality["pessimistic"] and self.personality["demonstrative"]:
+            pass
 
