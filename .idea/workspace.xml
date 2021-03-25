@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7faa4860-1800-456c-95ef-4b570392e8ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Personality.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PersonalityParser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AIConversation.py" beforeDir="false" afterPath="$PROJECT_DIR$/AIConversation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EmotAI.py" beforeDir="false" afterPath="$PROJECT_DIR$/EmotAI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Personnality.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonnalityParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personalities/personality1.json" beforeDir="false" afterPath="$PROJECT_DIR$/personalities/personality1.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +232,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611765390704</updated>
-      <workItem from="1616678491820" duration="791000" />
+      <workItem from="1616678491820" duration="1897000" />
     </task>
     <servers />
   </component>
@@ -247,5 +250,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/firstAITry$app.coverage" NAME="app Coverage Results" MODIFIED="1616680239283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
