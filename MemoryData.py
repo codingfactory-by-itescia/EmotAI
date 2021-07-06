@@ -1,7 +1,7 @@
 class MemoryData:
     values = []
 
-    def __init__(self, initial_values,size):
+    def __init__(self, initial_values, size):
         self.values = initial_values
         self.size = size
 
@@ -16,7 +16,8 @@ class MemoryData:
         new_array.append(value)
         self.values = new_array
         return
-    def count_value(self,value):
+
+    def count_value(self, value):
         count = 0
         for index in range(len(self.values)):
             if self.values[index] == value:

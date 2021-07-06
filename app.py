@@ -2,11 +2,11 @@ from AIConversation import AIConversation
 from EmotAI import EmotAI
 from PersonalityParser import PersonalityParser
 
-loadedPersonality = PersonalityParser.parse("personality1")
+loadedPersonality = PersonalityParser.parse("personality2")
 
-loadedPersonality['sensible'] = True
+# loadedPersonality['sensible'] = True
 
-PersonalityParser.save("personality1", loadedPersonality)
+# PersonalityParser.save("personality2", loadedPersonality)
 
-c = AIConversation()
+c = AIConversation(loadedPersonality)
 
