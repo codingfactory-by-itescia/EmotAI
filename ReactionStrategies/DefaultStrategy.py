@@ -13,7 +13,7 @@ class DefaultStrategy:
         self.emot_ai = emot_ai
         self.is_personality = {
             "hit": emot_ai.personality["sensible"] and emot_ai.personality["pessimistic"] and emot_ai.personality["demonstrative"],
-            "joke": True
+            "joke": not emot_ai.personality["sensible"] and not emot_ai.personality["demonstrative"]
         }
 
     def hit(self):

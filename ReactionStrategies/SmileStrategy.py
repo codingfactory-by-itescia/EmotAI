@@ -7,7 +7,7 @@ class SmileStrategy:
         self.emot_ai = emot_ai
         self.is_personality = {
             "hit": not emot_ai.personality["extrovert"] and not emot_ai.personality["pessimistic"] and not emot_ai.personality["impulsive"],
-            "joke": True
+            "joke": emot_ai.personality["sensible"] and not emot_ai.personality["extrovert"]
         }
 
     def hit(self):

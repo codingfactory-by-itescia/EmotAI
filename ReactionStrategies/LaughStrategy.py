@@ -7,7 +7,7 @@ class LaughStrategy:
         self.emot_ai = emot_ai
         self.is_personality = {
             "hit": emot_ai.personality["extrovert"] and emot_ai.personality["impulsive"] and not emot_ai.personality["pessimistic"] and emot_ai.personality["demonstrative"],
-            "joke": True
+            "joke": emot_ai.personality["demonstrative"] and emot_ai.personality["extrovert"] and emot_ai.personality["impulsive"]
         }
 
     def hit(self):
