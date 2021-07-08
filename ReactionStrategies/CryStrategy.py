@@ -1,4 +1,4 @@
-from utils import react
+from utils import handle_reaction
 
 class CryStrategy:
     hit_table = [
@@ -7,6 +7,13 @@ class CryStrategy:
         "I want to hit you !",
         "Here is my money.",
         "Good bye Cruel World !"
+    ]
+    joke_table = [
+        "Sorry but I am not ready to laugh !",
+        "…",
+        ":|",
+        ":’]",
+        ":]"
     ]
 
     def __init__(self, emot_ai):
@@ -17,16 +24,10 @@ class CryStrategy:
         }
 
     def hit(self):
-        self.emot_ai.say(
-            react(
-                self.hit_table,
-                self.emot_ai.actions_memory.count_value("hit")
-            )
-        )
-        self.emot_ai.actions_memory.add("hit")
-
+        handle_reaction(self.emot_ai, self.hit_table, "hit")
         should_continue = not self.emot_ai.actions_memory.count_value("hit") > len(self.hit_table)
         return should_continue
 
     def joke(self):
-        pass
+        handle_reaction(self.emot_ai, self.joke_table, "joke")
+        return True

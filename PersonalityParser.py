@@ -1,6 +1,5 @@
 import json
 
-
 class PersonalityParser:
     @staticmethod
     def parse(personality_file_name):

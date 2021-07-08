@@ -1,7 +1,8 @@
-from utils import react
+from utils import handle_reaction,handle_with_random_reaction
 
 class SmileStrategy:
     hit_table = [":o", ":|", ":)", ":>", ":D"]
+    joke_table = ["...","Hhh...", "Hihihi", "Ha…ha", "Hahaha !" ]
 
     def __init__(self, emot_ai):
         self.emot_ai = emot_ai
@@ -11,15 +12,10 @@ class SmileStrategy:
         }
 
     def hit(self):
-        self.emot_ai.say(
-            react(
-                self.hit_table,
-                self.emot_ai.actions_memory.count_value("hit")
-            )
-        )
-        self.emot_ai.actions_memory.add("hit")
+        handle_reaction(self.emot_ai, self.hit_table, "hit")
         return True
 
     def joke(self):
-        pass
+        handle_with_random_reaction(self.emot_ai, self.joke_table, "joke")
+        return True
 

@@ -4,5 +4,12 @@
     "impulsive": false,
     "pessimistic": false,
     "demonstrative": true,
-    "memory": []
+    "memory": [
+        "hit",
+        "look",
+        "look",
+        "look",
+        "joke",
+        "joke"
+    ]
 }

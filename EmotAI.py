@@ -4,25 +4,25 @@ from ReactionStrategies.SmileStrategy import SmileStrategy
 from ReactionStrategies.AgressiveStrategy import AgressiveStrategy
 from ReactionStrategies.CryStrategy import CryStrategy
 from ReactionStrategies.DefaultStrategy import DefaultStrategy
+from PersonalityParser import  PersonalityParser
 
 
 class EmotAI:
     NAME_OF_MEMORY_INDEX = 0
     VALUE_OF_MEMORY_INDEX = 1
-    MEMORY_SIZE = 10
+    MEMORY_SIZE = 6
 
     def __init__(self, personality):
-        self.personality = personality
+        self.personality_name = personality
+        self.personality = PersonalityParser.parse(personality)
         self.knowledge = self.take_knowledge()
-        self.actions_memory = MemoryData(personality["memory"], self.MEMORY_SIZE)
+        self.actions_memory = MemoryData(self.personality["memory"], self.MEMORY_SIZE)
+        self.actions_memory.onMemoryChange = self.onMemoryChange
 
-        self.personalities_strategies = [
-            LaughStrategy(self),
-            SmileStrategy(self),
-            AgressiveStrategy(self),
-            CryStrategy(self),
-            DefaultStrategy(self)
-        ]
+    def onMemoryChange(self):
+        self.personality["memory"] = self.actions_memory.values
+        PersonalityParser.save(self.personality_name,self.personality)
+
 
     def take_knowledge(self):
         f = open("memoryOfEmotAI.txt", "r")
@@ -52,6 +52,9 @@ class EmotAI:
         elif str.lower(to_analyze) == "joke":
             self.joke()
             return True
+        elif str.lower(to_analyze) == "look":
+            self.look()
+            return True
         else:
             self.say("You said \"" + to_analyze + "\" but I did not understand. If you want to stop, just tell me STOP")
             return True
@@ -60,11 +63,34 @@ class EmotAI:
         self.say("For the moment...")
 
     def hit(self):
-        for personality in self.personalities_strategies:
+        personalities_strategies = [
+            LaughStrategy(self),
+            SmileStrategy(self),
+            AgressiveStrategy(self),
+            CryStrategy(self),
+            DefaultStrategy(self)
+        ]
+        for personality in personalities_strategies:
             if personality.is_personality["hit"]:
                 return personality.hit()
 
     def joke(self):
-        for personality in self.personalities_strategies:
+        personalities_strategies = [
+            LaughStrategy(self),
+            SmileStrategy(self),
+            CryStrategy(self),
+            AgressiveStrategy(self),
+            DefaultStrategy(self)
+        ]
+        for personality in personalities_strategies:
             if personality.is_personality["joke"]:
                 return personality.joke()
+
+    def look(self):
+        personalities_strategies = [
+            AgressiveStrategy(self),
+            DefaultStrategy(self)
+        ]
+        for personality in personalities_strategies:
+            if personality.is_personality["look"]:
+                return personality.look()
