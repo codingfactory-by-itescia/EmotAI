@@ -1,4 +1,4 @@
 from AIConversation import AIConversation
 
-AIConversation("personality2")
+AIConversation("personality3")
 
