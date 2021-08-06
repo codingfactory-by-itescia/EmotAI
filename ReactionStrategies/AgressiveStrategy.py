@@ -16,7 +16,7 @@ class AgressiveStrategy:
     ]
     look_table = [
         "What do you look ?",
-        "What are you doig !",
+        "What are you doing !",
         "Get lost !"
     ]
 
