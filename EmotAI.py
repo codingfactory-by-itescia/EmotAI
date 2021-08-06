@@ -47,8 +47,7 @@ class EmotAI:
             self.say("Ok, bye !")
             return False
         elif str.lower(to_analyze) == "hit":
-            self.hit()
-            return True
+            return self.hit()
         elif str.lower(to_analyze) == "joke":
             self.joke()
             return True
