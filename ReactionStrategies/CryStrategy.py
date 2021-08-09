@@ -25,7 +25,7 @@ class CryStrategy:
 
     def hit(self):
         handle_reaction(self.emot_ai, self.hit_table, "hit")
-        should_continue = not self.emot_ai.actions_memory.count_value("hit") > len(self.hit_table)
+        should_continue = not self.emot_ai.actions_memory.count_value("hit") > len(self.hit_table) - 1
         return should_continue
 
     def joke(self):

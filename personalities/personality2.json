@@ -5,11 +5,11 @@
     "pessimistic": false,
     "demonstrative": true,
     "memory": [
-        "hit",
-        "look",
-        "look",
-        "look",
         "joke",
-        "joke"
+        "joke",
+        "joke",
+        "joke",
+        "hit",
+        "look"
     ]
 }
